@@ -3,309 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>杭州锦烁汽车电子有限公司 - 专业汽车电脑板ECU/TCU/VCU供应商</title>
+    <title>杭州锦烁汽车电子有限公司 - 专业汽车电脑板ECU/TCU/VCU供应商 | Hangzhou Jinshuo Auto Electronics</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1e3a5f 100%);
-        }
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        .product-card {
-            transition: all 0.3s ease;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #e5e7eb;
-        }
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-            border-color: #3b82f6;
-        }
-        .equipment-card {
-            transition: all 0.3s ease;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #e5e7eb;
-        }
-        .equipment-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-        }
-        .factory-card {
-            transition: all 0.3s ease;
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #e5e7eb;
-        }
-        .factory-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-        }
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #3b82f6;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .section-title {
-            position: relative;
-            display: inline-block;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
-            border-radius: 2px;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            justify-content: center;
-            align-items: center;
-        }
-        .modal.active {
-            display: flex;
-        }
-        .modal-content {
-            max-width: 90%;
-            max-height: 80vh;
-            object-fit: contain;
-        }
-        .modal-content-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            max-width: 90%;
-            max-height: 90%;
-        }
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 1001;
-        }
-        .tab-btn.active {
-            background: #3b82f6;
-            color: white;
-        }
-        .fade-in {
-            animation: fadeIn 0.6s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .hero-pattern {
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
-        }
-        .stat-number {
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        /* 图片骨架屏 - 用伪元素实现 */
-        .has-skeleton::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: shimmer 1.5s infinite;
-            z-index: 0;
-        }
-        @keyframes shimmer {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-        
-        /* 确保图片在骨架屏上面 */
-        .has-skeleton img {
-            position: relative;
-            z-index: 1;
-        }
-        /* 图片加载淡入效果 */
-        .img-fade {
-            opacity: 1;
-            transition: opacity 0.3s ease-in-out;
-        }
-        .img-fade.loaded {
-            opacity: 1;
-        }
-        /* 产品图片容器 */
-        .product-img-container {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            position: relative;
-            overflow: hidden;
-            display: block;
-            height: 128px;
-            padding: 8px;
-        }
-        .product-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        .product-img-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .product-card:hover .product-img-container::before {
-            opacity: 1;
-        }
-        /* 产品图片hover缩放 */
-        .product-img-container img {
-            transition: transform 0.4s ease;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
-        }
-        .product-card:hover .product-img-container img {
-            transform: scale(1.08);
-            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.12));
-        }
-        /* 设备图片容器 */
-        .equipment-img-container {
-            background: linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .equipment-card-optimized img {
-            transition: transform 0.4s ease;
-        }
-        .equipment-card-optimized:hover img {
-            transform: scale(1.05);
-        }
-        /* 工厂图片hover效果 */
-        .factory-card {
-            overflow: hidden;
-        }
-        .factory-card img {
-            transition: transform 0.5s ease, filter 0.3s ease;
-        }
-        .factory-card:hover img {
-            transform: scale(1.05);
-            filter: brightness(1.05);
-        }
-        
-        /* 关于我们图片hover效果 */
-        #about img {
-            transition: transform 0.5s ease;
-        }
-        #about img:hover {
-            transform: scale(1.03);
-        }
-        /* 模态框图片加载 */
-        .modal-loading {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 80px;
-            height: 80px;
-        }
-        .modal-loading::after {
-            content: '';
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        /* 图片错误占位 */
-        .img-error {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: #9ca3af;
-            font-size: 12px;
-        }
-        .img-error i {
-            font-size: 24px;
-            margin-bottom: 4px;
-        }
-        
-        /* 移动端适配 */
+        html { scroll-behavior: smooth; }
+        .gradient-bg { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1e3a5f 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        .product-card { transition: all 0.3s ease; background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb; }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px rgba(0,0,0,0.15); border-color: #3b82f6; }
+        .equipment-card { transition: all 0.3s ease; background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb; }
+        .equipment-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.12); }
+        .factory-card { transition: all 0.3s ease; background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb; }
+        .factory-card:hover { transform: scale(1.02); box-shadow: 0 15px 30px rgba(0,0,0,0.12); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #3b82f6; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .section-title { position: relative; display: inline-block; }
+        .section-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background: linear-gradient(90deg, #3b82f6, #1d4ed8); border-radius: 2px; }
+        .section-subtitle { display: block; font-size: 0.875rem; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+        .modal.active { display: flex; }
+        .modal-content { max-width: 90%; max-height: 80vh; object-fit: contain; }
+        .modal-content-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; max-width: 90%; max-height: 90%; }
+        .close-modal { position: absolute; top: 20px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 1001; }
+        .tab-btn.active { background: #3b82f6; color: white; }
+        .fade-in { animation: fadeIn 0.6s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-pattern { background-image: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%); }
+        .stat-number { background: linear-gradient(135deg, #3b82f6, #1d4ed8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .has-skeleton::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; z-index: 0; }
+        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+        .has-skeleton img { position: relative; z-index: 1; }
+        .product-img-container { background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); position: relative; overflow: hidden; display: block; height: 128px; padding: 8px; }
+        .product-img-container img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.4s ease; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08)); }
+        .product-card:hover .product-img-container img { transform: scale(1.08); filter: drop-shadow(0 4px 12px rgba(0,0,0,0.12)); }
+        .equipment-card-optimized img { transition: transform 0.4s ease; }
+        .equipment-card-optimized:hover img { transform: scale(1.05); }
+        .factory-card { overflow: hidden; }
+        .factory-card img { transition: transform 0.5s ease, filter 0.3s ease; }
+        .factory-card:hover img { transform: scale(1.05); filter: brightness(1.05); }
+        #about img { transition: transform 0.5s ease; }
+        #about img:hover { transform: scale(1.03); }
+        .modal-loading { display: flex; align-items: center; justify-content: center; width: 80px; height: 80px; }
+        .modal-loading::after { content: ''; width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.8s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .wechat-qr { width: 140px; height: 140px; border-radius: 12px; object-fit: cover; margin: 0 auto; display: block; border: 4px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .en-sub { font-size: 0.75rem; opacity: 0.7; font-weight: 400; letter-spacing: 0.5px; }
         @media (max-width: 640px) {
-            .product-img-container {
-                height: 100px !important;
-                padding: 8px !important;
-            }
-            .equipment-img-container {
-                height: 90px !important;
-                padding: 8px !important;
-            }
-            .close-modal {
-                top: 15px;
-                right: 20px;
-                font-size: 30px;
-            }
-            .modal-content {
-                max-width: 95%;
-                max-height: 70vh;
-            }
-            #modalCaption {
-                font-size: 14px;
-                margin-top: 12px;
-            }
+            .product-img-container { height: 100px !important; padding: 8px !important; }
+            .close-modal { top: 15px; right: 20px; font-size: 30px; }
+            .modal-content { max-width: 95%; max-height: 70vh; }
+            .wechat-qr { width: 120px; height: 120px; }
         }
     </style>
 </head>
 <body class="bg-gray-50 font-sans">
-    <!-- 导航栏 -->
+    <!-- 导航栏 / Navigation -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 lg:h-20">
@@ -314,16 +69,16 @@
                         <i class="fas fa-car text-white text-lg lg:text-xl"></i>
                     </div>
                     <div>
-                        <h1 class="text-lg lg:text-xl font-bold text-gray-800">中科汽车零部件</h1>
-                        <p class="text-xs text-gray-500 hidden sm:block">ZHONGKE AUTO PARTS</p>
+                        <h1 class="text-lg lg:text-xl font-bold text-gray-800">杭州锦烁汽车电子</h1>
+                        <p class="text-xs text-gray-500 hidden sm:block">HANGZHOU JINSHUO AUTO</p>
                     </div>
                 </div>
                 <div class="hidden lg:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 font-medium">首页</a>
-                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 font-medium">关于我们</a>
-                    <a href="#products" class="nav-link text-gray-700 hover:text-blue-600 font-medium">产品中心</a>
-                    <a href="#equipment" class="nav-link text-gray-700 hover:text-blue-600 font-medium">生产设备</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 font-medium">联系我们</a>
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 font-medium">首页<span class="en-sub block text-xs">Home</span></a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 font-medium">关于我们<span class="en-sub block text-xs">About Us</span></a>
+                    <a href="#equipment" class="nav-link text-gray-700 hover:text-blue-600 font-medium">生产设备<span class="en-sub block text-xs">Equipment</span></a>
+                    <a href="#products" class="nav-link text-gray-700 hover:text-blue-600 font-medium">产品中心<span class="en-sub block text-xs">Products</span></a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 font-medium">联系我们<span class="en-sub block text-xs">Contact</span></a>
                 </div>
                 <div class="lg:hidden">
                     <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600">
@@ -332,78 +87,86 @@
                 </div>
             </div>
         </div>
-        <!-- 移动端菜单 -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t">
             <div class="px-4 py-3 space-y-3">
-                <a href="#home" class="block text-gray-700 hover:text-blue-600 font-medium py-2">首页</a>
-                <a href="#about" class="block text-gray-700 hover:text-blue-600 font-medium py-2">关于我们</a>
-                <a href="#products" class="block text-gray-700 hover:text-blue-600 font-medium py-2">产品中心</a>
-                <a href="#equipment" class="block text-gray-700 hover:text-blue-600 font-medium py-2">生产设备</a>
-                <a href="#contact" class="block text-gray-700 hover:text-blue-600 font-medium py-2">联系我们</a>
+                <a href="#home" class="block text-gray-700 hover:text-blue-600 font-medium py-2">首页 <span class="text-xs text-gray-400">Home</span></a>
+                <a href="#about" class="block text-gray-700 hover:text-blue-600 font-medium py-2">关于我们 <span class="text-xs text-gray-400">About Us</span></a>
+                <a href="#equipment" class="block text-gray-700 hover:text-blue-600 font-medium py-2">生产设备 <span class="text-xs text-gray-400">Equipment</span></a>
+                <a href="#products" class="block text-gray-700 hover:text-blue-600 font-medium py-2">产品中心 <span class="text-xs text-gray-400">Products</span></a>
+                <a href="#contact" class="block text-gray-700 hover:text-blue-600 font-medium py-2">联系我们 <span class="text-xs text-gray-400">Contact</span></a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero区域 -->
+    <!-- Hero区域 / Hero Section -->
     <section id="home" class="gradient-bg hero-pattern min-h-screen flex items-center pt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="text-white fade-in">
-                    <h2 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                    <h2 class="text-4xl lg:text-6xl font-bold mb-4 leading-tight">
                         专业汽车电子<br>
                         <span class="text-blue-300">零部件供应商</span>
                     </h2>
-                    <p class="text-lg lg:text-xl text-blue-100 mb-8 leading-relaxed">
+                    <p class="text-lg lg:text-xl text-blue-200 mb-2 font-light tracking-wide">Professional Auto Electronic Parts Supplier</p>
+                    <p class="text-base lg:text-lg text-blue-100 mb-8 leading-relaxed">
                         专注汽车发动机电脑板（ECU）、变速箱电脑板（TCU）、新能源整车控制器（VCU）的研发与制造，为您提供高品质汽车电子解决方案
+                    </p>
+                    <p class="text-sm text-blue-200/80 mb-8 leading-relaxed">
+                        Specializing in R&D and manufacturing of automotive ECU, TCU, and new energy VCU, providing high-quality auto electronic solutions.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <a href="#products" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center">
-                            <i class="fas fa-th-large mr-2"></i>
-                            查看产品
+                            <i class="fas fa-th-large mr-2"></i>查看产品 <span class="ml-1 text-xs opacity-70">Products</span>
                         </a>
                         <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors inline-flex items-center">
-                            <i class="fas fa-phone mr-2"></i>
-                            联系我们
+                            <i class="fas fa-phone mr-2"></i>联系我们 <span class="ml-1 text-xs opacity-70">Contact</span>
                         </a>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4 fade-in">
                     <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white">
                         <div class="text-4xl lg:text-5xl font-bold stat-number mb-2">90+</div>
-                        <div class="text-blue-200">产品型号</div>
+                        <div class="text-blue-200">产品类型</div>
+                        <div class="text-blue-300/70 text-xs mt-1">Product Types</div>
                     </div>
                     <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white">
                         <div class="text-4xl lg:text-5xl font-bold stat-number mb-2">10+</div>
                         <div class="text-blue-200">年行业经验</div>
+                        <div class="text-blue-300/70 text-xs mt-1">Years Experience</div>
                     </div>
                     <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white">
                         <div class="text-4xl lg:text-5xl font-bold stat-number mb-2">6</div>
                         <div class="text-blue-200">大产品类别</div>
+                        <div class="text-blue-300/70 text-xs mt-1">Categories</div>
                     </div>
                     <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white">
                         <div class="text-4xl lg:text-5xl font-bold stat-number mb-2">18</div>
                         <div class="text-blue-200">台专业设备</div>
+                        <div class="text-blue-300/70 text-xs mt-1">Equipment</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 关于我们 -->
+    <!-- 关于我们 / About Us -->
     <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="section-title text-3xl lg:text-4xl font-bold text-gray-800 mb-4">关于我们</h2>
+                <span class="section-subtitle text-gray-400">ABOUT US</span>
                 <p class="text-gray-600 mt-8 max-w-2xl mx-auto">专业、专注、专心，致力于成为汽车电子领域领先的零部件供应商</p>
+                <p class="text-gray-400 text-sm mt-2 max-w-2xl mx-auto">Dedicated to becoming a leading auto electronic parts supplier</p>
             </div>
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">中科汽车零部件有限公司</h3>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">杭州锦烁汽车电子有限公司</h3>
+                    <p class="text-gray-400 text-sm mb-6 tracking-wide">HANGZHOU JINSHUO AUTO ELECTRONICS CO., LTD.</p>
                     <p class="text-gray-600 mb-4 leading-relaxed">
-                        中科汽车零部件有限公司是一家专业从事汽车电子零部件研发、生产和销售的高新技术企业。公司专注于汽车发动机电脑板（ECU）、变速箱电脑板（TCU）、新能源整车控制器（VCU）等核心汽车电子产品。
+                        杭州锦烁汽车电子有限公司拥有专业化技术团队，先进的检测设备，完善的生产工艺于一体化的生产流程，通过汽车零部件的检测研发，为国外客商提供优质的附加服务。
                     </p>
                     <p class="text-gray-600 mb-6 leading-relaxed">
-                        公司拥有现代化的生产车间和先进的生产设备，包括完整的SMT生产线、三防涂覆线、功能测试线等。凭借多年的技术积累和严格的质量管理体系，我们为客户提供高品质、高可靠性的汽车电子产品。
+                        产品销售（汽油，柴油，变速箱，新能源电脑板全系，零售，批发，代发，来样定制），生产（生产配套，方案设计开发，OEM 代工代料生产，电子元器件配套采购，PCB 制作，SMT 贴片加工，DIP 插件组装测试，烧录及成品装配等），研发（模块研修，解决汽车电脑模块软硬件问题，在线编程匹配防盗，数据制作，故障诊断，电脑维修精修等）国际贸易于一体的零部件生产企业。
                     </p>
                     <div class="grid grid-cols-2 gap-6">
                         <div class="flex items-start space-x-3">
@@ -412,7 +175,7 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold text-gray-800">品质保证</h4>
-                                <p class="text-sm text-gray-500">严格质量管控体系</p>
+                                <p class="text-xs text-gray-500">Quality Assurance</p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-3">
@@ -421,7 +184,7 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold text-gray-800">技术领先</h4>
-                                <p class="text-sm text-gray-500">专业研发团队</p>
+                                <p class="text-xs text-gray-500">Advanced Technology</p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-3">
@@ -430,7 +193,7 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold text-gray-800">快速交付</h4>
-                                <p class="text-sm text-gray-500">高效生产能力</p>
+                                <p class="text-xs text-gray-500">Fast Delivery</p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-3">
@@ -439,814 +202,259 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold text-gray-800">专业服务</h4>
-                                <p class="text-sm text-gray-500">全程技术支持</p>
+                                <p class="text-xs text-gray-500">Professional Service</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
-                    <img src="https://aka.doubaocdn.com/s/SILY1wmSqK" alt="SMT车间" class="rounded-xl shadow-lg w-full h-48 object-cover">
-                    <img src="https://s41.ax1x.com/2026/03/21/penDObt.png" alt="AIO车间" class="rounded-xl shadow-lg w-full h-48 object-cover mt-8">
-                    <img src="https://s41.ax1x.com/2026/03/21/penDvUf.jpg" alt="装配车间" class="rounded-xl shadow-lg w-full h-48 object-cover">
-                    <img src="https://s41.ax1x.com/2026/03/21/penDx58.png" alt="功能测试" class="rounded-xl shadow-lg w-full h-48 object-cover mt-8">
+                    <img src="https://s41.ax1x.com/2026/03/21/penDjVP.jpg" alt="SMT车间 / SMT Workshop" class="rounded-xl shadow-lg w-full h-48 object-cover">
+                    <img src="https://s41.ax1x.com/2026/03/21/penDObt.png" alt="AIO车间 / AIO Workshop" class="rounded-xl shadow-lg w-full h-48 object-cover mt-8">
+                    <img src="https://s41.ax1x.com/2026/03/21/penDvUf.jpg" alt="装配车间 / Assembly" class="rounded-xl shadow-lg w-full h-48 object-cover">
+                    <img src="https://s41.ax1x.com/2026/03/21/penDx58.png" alt="功能测试 / Testing" class="rounded-xl shadow-lg w-full h-48 object-cover mt-8">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 产品中心 -->
-    <section id="products" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="section-title text-3xl lg:text-4xl font-bold text-gray-800 mb-4">产品中心</h2>
-                <p class="text-gray-600 mt-8 max-w-2xl mx-auto">六大类产品，覆盖汽油、柴油、新能源等多种车型需求</p>
-            </div>
-
-            <!-- 产品分类标签 -->
-            <div class="flex flex-wrap justify-center gap-3 mb-12">
-                <button class="tab-btn active px-6 py-2 rounded-full font-medium transition-all border border-gray-200" data-tab="gasoline">
-                    汽油发动机ECU
-                </button>
-                <button class="tab-btn px-6 py-2 rounded-full font-medium transition-all border border-gray-200 bg-white text-gray-600 hover:bg-gray-100" data-tab="hyundai">
-                    现代汽车ECU
-                </button>
-                <button class="tab-btn px-6 py-2 rounded-full font-medium transition-all border border-gray-200 bg-white text-gray-600 hover:bg-gray-100" data-tab="diesel">
-                    柴油发动机ECU
-                </button>
-                <button class="tab-btn px-6 py-2 rounded-full font-medium transition-all border border-gray-200 bg-white text-gray-600 hover:bg-gray-100" data-tab="transmission">
-                    变速箱TCU
-                </button>
-                <button class="tab-btn px-6 py-2 rounded-full font-medium transition-all border border-gray-200 bg-white text-gray-600 hover:bg-gray-100" data-tab="newenergy">
-                    新能源VCU
-                </button>
-                <button class="tab-btn px-6 py-2 rounded-full font-medium transition-all border border-gray-200 bg-white text-gray-600 hover:bg-gray-100" data-tab="jetski">
-                    摩托艇ECU
-                </button>
-            </div>
-
-            <!-- 汽油发动机ECU -->
-            <div id="gasoline" class="tab-content">
-                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
-                    <i class="fas fa-gas-pump text-blue-600 mr-3"></i>
-                    汽油发动机电脑板（ECU）
-                    <span class="ml-3 text-sm font-normal text-gray-500">共48款产品</span>
-                </h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/20/pezw9oR.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/20/pezw9oR.jpg" alt="M154" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">M154</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/20/penStUI.png">
-                            <img src="https://s41.ax1x.com/2026/03/20/penStUI.png" alt="ME7.9.7" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME7.9.7</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/28/pmiDwjA.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/28/pmiDwjA.jpg" alt="M7亮壳" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">M7亮壳</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/20/penS3Ke.png">
-                            <img src="https://s41.ax1x.com/2026/03/20/penS3Ke.png" alt="M7铸铝" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">M7铸铝</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/20/penS8DH.png">
-                            <img src="https://s41.ax1x.com/2026/03/20/penS8DH.png" alt="ME7" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME7</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/20/penSGbd.png">
-                            <img src="https://s41.ax1x.com/2026/03/20/penSGbd.png" alt="ME17" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME17</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/17/peZjM6A.png">
-                            <img src="https://s41.ax1x.com/2026/03/17/peZjM6A.png" alt="ECU6.1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ECU6.1</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/17/peZjQOI.png">
-                            <img src="https://s41.ax1x.com/2026/03/17/peZjQOI.png" alt="MG1UA008" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MG1UA008</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/17/peZj1mt.png">
-                            <img src="https://s41.ax1x.com/2026/03/17/peZj1mt.png" alt="MG1US008" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MG1US008</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/08/pmnGEfU.png">
-                            <img src="https://s41.ax1x.com/2026/06/08/pmnGEfU.png" alt="MG1US008" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MG1US008</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/17/peZj8Tf.png">
-                            <img src="https://s41.ax1x.com/2026/03/17/peZj8Tf.png" alt="MG1US018" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MG1US018</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/26/pmPenO0.png">
-                            <img src="https://s41.ax1x.com/2026/05/26/pmPenO0.png" alt="MED17中板" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MED17中板</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/20/penSlvD.jpg">
-                            <img src="https://s41.ax1x.com/2026/03/20/penSlvD.jpg" alt="MED17大板" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MED17大板</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/18/peeM4KA.png">
-                            <img src="https://s41.ax1x.com/2026/03/18/peeM4KA.png" alt="MED17.4.4" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MED17.4.4</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/20/peniSpt.png">
-                            <img src="https://s41.ax1x.com/2026/03/20/peniSpt.png" alt="ME7.4.4" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME7.4.4</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/20/penSYVA.png">
-                            <img src="https://s41.ax1x.com/2026/03/20/penSYVA.png" alt="ME7.4.5" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME7.4.5</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/27/pmP5JXT.png">
-                            <img src="https://s41.ax1x.com/2026/05/27/pmP5JXT.png" alt="ITMS-6F" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ITMS-6F</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/18/pexGczd.png">
-                            <img src="https://s41.ax1x.com/2026/05/18/pexGczd.png" alt="MT20" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT20</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/18/peeM6UK.png">
-                            <img src="https://s41.ax1x.com/2026/03/18/peeM6UK.png" alt="MT22U" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT22U</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/26/pmCO4FU.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/26/pmCO4FU.jpg" alt="MT22.1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT22.1</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/08/pmnGPwq.jpg">
-                            <img src="https://s41.ax1x.com/2026/06/08/pmnGPwq.jpg" alt="MT22.3" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT22.3</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/19/pemm4IS.png">
-                            <img src="https://s41.ax1x.com/2026/03/19/pemm4IS.png" alt="MT34" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT34</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/19/pemmRqP.png">
-                            <img src="https://s41.ax1x.com/2026/03/19/pemmRqP.png" alt="MT60" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT60</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/01/pmAfi11.png">
-                            <img src="https://s41.ax1x.com/2026/06/01/pmAfi11.png" alt="MT62.1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT62.1</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/08/pmnGiT0.jpg">
-                            <img src="https://s41.ax1x.com/2026/06/08/pmnGiT0.jpg" alt="MT62.3" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT62.3</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/19/pemmfVf.png">
-                            <img src="https://s41.ax1x.com/2026/03/19/pemmfVf.png" alt="MT80" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT80</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/25/pmCN2QK.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/25/pmCN2QK.jpg" alt="MT92.1中板" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT92.1中板</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/25/pmCNRsO.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/25/pmCNRsO.jpg" alt="MT92.1大板" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT92.1大板</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/19/pemm7xs.jpg">
-                            <img src="https://s41.ax1x.com/2026/03/19/pemm7xs.jpg" alt="MT95" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT95</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/27/pmPIKKK.png">
-                            <img src="https://s41.ax1x.com/2026/05/27/pmPIKKK.png" alt="ME17.5.22" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME17.5.22</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/18/pexGLyn.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/18/pexGLyn.jpg" alt="MED17.5.25" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MED17.5.25</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/01/pmAfF6x.png">
-                            <img src="https://s41.ax1x.com/2026/06/01/pmAfF6x.png" alt="FC-34" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">FC-34</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/01/pmAf9h9.png">
-                            <img src="https://s41.ax1x.com/2026/06/01/pmAf9h9.png" alt="EMS6104" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EMS6104</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/01/pmAfptJ.jpg">
-                            <img src="https://s41.ax1x.com/2026/06/01/pmAfptJ.jpg" alt="311系列" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">311系列</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/01/pmAfSk4.jpg">
-                            <img src="https://s41.ax1x.com/2026/06/01/pmAfSk4.jpg" alt="IAW 6KPJ" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">IAW 6KPJ</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/29/pmFeYXn.png">
-                            <img src="https://s41.ax1x.com/2026/05/29/pmFeYXn.png" alt="VA1000Q" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">VA1000Q</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/29/pmFe1fg.png">
-                            <img src="https://s41.ax1x.com/2026/05/29/pmFe1fg.png" alt="LEC4AF" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">LEC4AF</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/28/pmiDdcd.png">
-                            <img src="https://s41.ax1x.com/2026/05/28/pmiDdcd.png" alt="FC-50" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">FC-50</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/27/pmP5NBF.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/27/pmP5NBF.jpg" alt="Easy_U1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">Easy_U1</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/26/pmPemyq.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/26/pmPemyq.jpg" alt="Easy_U2" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">Easy_U2</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/26/pmCO7l9.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/26/pmCO7l9.jpg" alt="EasyU SDI" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EasyU SDI</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/26/pmCOIW4.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/26/pmCOIW4.jpg" alt="SIMK31" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">SIMK31</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/18/pexGRsI.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/18/pexGRsI.jpg" alt="T446" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">T446</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/18/pexG2QA.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/18/pexG2QA.jpg" alt="ECM-DAA" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ECM-DAA</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/18/pexG6RH.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/18/pexG6RH.jpg" alt="DZBS" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">DZBS</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/20/pezwPF1.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/20/pezwPF1.jpg" alt="SIM2K-51.4" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">SIM2K-51.4</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/08/pmnGkkV.jpg">
-                            <img src="https://s41.ax1x.com/2026/06/08/pmnGkkV.jpg" alt="SCE60.12" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">SCE60.12</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/18/pm3ORNq.jpg">
-                            <img src="https://s41.ax1x.com/2026/06/18/pm3ORNq.jpg" alt="BPE32" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">BPE32</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 现代汽车ECU -->
-            <div id="hyundai" class="tab-content hidden">
-                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
-                    <i class="fas fa-car text-blue-600 mr-3"></i>
-                    现代汽车电脑板（ECU）
-                    <span class="ml-3 text-sm font-normal text-gray-500">共12款产品</span>
-                </h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/03/pmEItn1.jpg">
-                            <img src="https://s41.ax1x.com/2026/06/03/pmEItn1.jpg" alt="ME17.9.8" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME17.9.8</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/03/pmEI81J.jpg">
-                            <img src="https://s41.ax1x.com/2026/06/03/pmEI81J.jpg" alt="MEG17.9.12" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MEG17.9.12</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/03/pmEI3p4.jpg">
-                            <img src="https://s41.ax1x.com/2026/06/03/pmEI3p4.jpg" alt="MED17.9.8" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MED17.9.8</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/03/pmEIlhF.jpg">
-                            <img src="https://s41.ax1x.com/2026/06/03/pmEIlhF.jpg" alt="MEG17.9.12.1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MEG17.9.12.1</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/03/pmEIQtU.jpg">
-                            <img src="https://s41.ax1x.com/2026/06/03/pmEIQtU.jpg" alt="MEG17.9.13" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MEG17.9.13</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/03/pmEIMkT.jpg">
-                            <img src="https://s41.ax1x.com/2026/06/03/pmEIMkT.jpg" alt="MEG17.9.21" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MEG17.9.21</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/26/pmCO5YF.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/26/pmCO5YF.jpg" alt="M7.9.8" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">M7.9.8</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/17/peZj30P.png">
-                            <img src="https://s41.ax1x.com/2026/03/17/peZj30P.png" alt="MG7.9.8" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MG7.9.8</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/08/peqUUcq.png">
-                            <img src="https://s41.ax1x.com/2026/05/08/peqUUcq.png" alt="ME17.9.5" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME17.9.5</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/08/peqU1HS.png">
-                            <img src="https://s41.ax1x.com/2026/05/08/peqU1HS.png" alt="ME17.9.11.1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME17.9.11.1</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/20/pezwiJx.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/20/pezwiJx.jpg" alt="GPGDSH2.26.1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">GPGDSH2.26.1</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/18/pexG4df.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/18/pexG4df.jpg" alt="MEDG17.9.8" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MEDG17.9.8</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 柴油发动机ECU -->
-            <div id="diesel" class="tab-content hidden">
-                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
-                    <i class="fas fa-oil-can text-blue-600 mr-3"></i>
-                    柴油发动机电脑板（ECU）
-                    <span class="ml-3 text-sm font-normal text-gray-500">共6款产品</span>
-                </h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/08/pmnGpOs.jpg">
-                            <img src="https://s41.ax1x.com/2026/06/08/pmnGpOs.jpg" alt="EDC17C04" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EDC17C04</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/29/pmFeJ6s.png">
-                            <img src="https://s41.ax1x.com/2026/05/29/pmFeJ6s.png" alt="EDC17C55" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EDC17C55</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/08/peqUQnf.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/08/peqUQnf.jpg" alt="EDC17C63" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EDC17C63</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/29/pmFeGlj.png">
-                            <img src="https://s41.ax1x.com/2026/05/29/pmFeGlj.png" alt="EDC16C39" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EDC16C39</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/01/pmAfEnK.png">
-                            <img src="https://s41.ax1x.com/2026/06/01/pmAfEnK.png" alt="EDC17C53" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EDC17C53</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/18/peeMWgH.png">
-                            <img src="https://s41.ax1x.com/2026/03/18/peeMWgH.png" alt="EDC17C81" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EDC17C81</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 变速箱TCU -->
-            <div id="transmission" class="tab-content hidden">
-                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
-                    <i class="fas fa-cogs text-blue-600 mr-3"></i>
-                    变速箱汽车电脑板（TCU）
-                    <span class="ml-3 text-sm font-normal text-gray-500">共12款产品</span>
-                </h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/08/pmnGCmn.jpg">
-                            <img src="https://s41.ax1x.com/2026/06/08/pmnGCmn.jpg" alt="MP TCU" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MP TCU</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/01/pmAfkX6.png">
-                            <img src="https://s41.ax1x.com/2026/06/01/pmAfkX6.png" alt="波箱" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">波箱</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/29/pmFe8pQ.png">
-                            <img src="https://s41.ax1x.com/2026/05/29/pmFe8pQ.png" alt="UTC8.1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">UTC8.1</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/28/pmiDBnI.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/28/pmiDBnI.jpg" alt="31036 3RCOA" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">31036 3RCOA</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/19/pm86cad.png">
-                            <img src="https://s41.ax1x.com/2026/06/19/pm86cad.png" alt="310F6 6LA0A" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">310F6 6LA0A</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/27/pmP5U74.png">
-                            <img src="https://s41.ax1x.com/2026/05/27/pmP5U74.png" alt="7DCTTCU" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">7DCTTCU</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/27/pmP5tnU.png">
-                            <img src="https://s41.ax1x.com/2026/05/27/pmP5tnU.png" alt="NL-4DE电脑" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">NL-4DE电脑</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/18/peeMrHx.png">
-                            <img src="https://s41.ax1x.com/2026/03/18/peeMrHx.png" alt="ASGW-LD" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ASGW-LD</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/20/pezwASK.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/20/pezwASK.jpg" alt="DQ381电脑" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">DQ381电脑</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/20/pezwSeJ.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/20/pezwSeJ.jpg" alt="CVT电脑" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">CVT电脑</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/18/pexGWLt.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/18/pexGWLt.jpg" alt="DQ200电脑" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">DQ200电脑</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/19/pm866VH.png">
-                            <img src="https://s41.ax1x.com/2026/06/19/pm866VH.png" alt="EAST80.C1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EAST80.C1</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 新能源VCU -->
-            <div id="newenergy" class="tab-content hidden">
-                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
-                    <i class="fas fa-bolt text-blue-600 mr-3"></i>
-                    新能源汽车电脑板（VCU）
-                    <span class="ml-3 text-sm font-normal text-gray-500">共6款产品</span>
-                </h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/22/pmJ85tg.png">
-                            <img src="https://s41.ax1x.com/2026/06/22/pmJ85tg.png" alt="VCU04-H-AR" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">VCU04-H-AR</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/18/pm3OhCV.jpg">
-                            <img src="https://s41.ax1x.com/2026/06/18/pm3OhCV.jpg" alt="VCU-HB02" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">VCU-HB02</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/03/pmEIN0x.png">
-                            <img src="https://s41.ax1x.com/2026/06/03/pmEIN0x.png" alt="VCU17-U61" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">VCU17-U61</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/03/pmEIGc9.png">
-                            <img src="https://s41.ax1x.com/2026/06/03/pmEIGc9.png" alt="VC1-UP008.0" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">VC1-UP008.0</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/18/pm3OW40.jpg">
-                            <img src="https://s41.ax1x.com/2026/06/18/pm3OW40.jpg" alt="VCU17-U62" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">VCU17-U62</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/18/pm3O43T.png">
-                            <img src="https://s41.ax1x.com/2026/06/18/pm3O43T.png" alt="VC1.UP008.5" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">VC1.UP008.5</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 摩托艇ECU -->
-            <div id="jetski" class="tab-content hidden">
-                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
-                    <i class="fas fa-ship text-blue-600 mr-3"></i>
-                    摩托艇发动机电脑（ECU）
-                    <span class="ml-3 text-sm font-normal text-gray-500">共6款产品</span>
-                </h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/17/peZjtfg.png">
-                            <img src="https://s41.ax1x.com/2026/03/17/peZjtfg.png" alt="MSE6.0" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MSE6.0</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/20/pezwFW6.jpg">
-                            <img src="https://s41.ax1x.com/2026/05/20/pezwFW6.jpg" alt="MSE8.0" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MSE8.0</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/20/pezwpw9.png">
-                            <img src="https://s41.ax1x.com/2026/05/20/pezwpw9.png" alt="MT05" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT05</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/19/pm86sqe.png">
-                            <img src="https://s41.ax1x.com/2026/06/19/pm86sqe.png" alt="MT05EB08" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT05EB08</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/18/pexGheP.png">
-                            <img src="https://s41.ax1x.com/2026/05/18/pexGheP.png" alt="MSE3.0" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MSE3.0</p>
-                    </div>
-                    <div class="product-card">
-                        <a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/19/pm86DKO.png">
-                            <img src="https://s41.ax1x.com/2026/06/19/pm86DKO.png" alt="28S-06" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy">
-                        </a>
-                        <p class="text-center text-gray-700 py-3 font-medium text-sm border-t">28S-06</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 生产设备 -->
+    <!-- 生产设备 / Equipment -->
     <section id="equipment" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="section-title text-3xl lg:text-4xl font-bold text-gray-800 mb-4">生产设备</h2>
+                <span class="section-subtitle text-gray-400">PRODUCTION EQUIPMENT</span>
                 <p class="text-gray-600 mt-8 max-w-2xl mx-auto">先进的生产设备，确保产品品质与交付效率</p>
+                <p class="text-gray-400 text-sm mt-2">Advanced equipment ensures product quality and delivery efficiency</p>
             </div>
-
-            <!-- 工厂设备 -->
             <div class="mb-16">
                 <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
                     <i class="fas fa-microchip text-blue-600 mr-3"></i>
                     生产设备
+                    <span class="ml-2 text-sm font-normal text-gray-400">Production Equipment</span>
                     <span class="ml-3 text-sm font-normal text-gray-500">共10台专业设备</span>
                 </h3>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                    <div class="equipment-card">
-                        <img src="https://s41.ax1x.com/2026/03/23/peuxQJ0.png" alt="自动上板机" class="w-full h-40 object-contain p-4" loading="lazy">
-                        <div class="p-3 text-center border-t border-gray-100">
-                            <h4 class="font-semibold text-gray-800">自动上板机</h4>
-                        </div>
-                    </div>
-                    <div class="equipment-card">
-                        <img src="https://s41.ax1x.com/2026/03/23/peuxlWV.png" alt="印刷机" class="w-full h-40 object-contain p-4" loading="lazy">
-                        <div class="p-3 text-center border-t border-gray-100">
-                            <h4 class="font-semibold text-gray-800">印刷机</h4>
-                        </div>
-                    </div>
-                    <div class="equipment-card">
-                        <img src="https://s41.ax1x.com/2026/03/22/peuIWi4.png" alt="贴片机" class="w-full h-40 object-contain p-4" loading="lazy">
-                        <div class="p-3 text-center border-t border-gray-100">
-                            <h4 class="font-semibold text-gray-800">贴片机</h4>
-                        </div>
-                    </div>
-                    <div class="equipment-card">
-                        <img src="https://s41.ax1x.com/2026/03/22/peuIss0.png" alt="SPI" class="w-full h-40 object-contain p-4" loading="lazy">
-                        <div class="p-3 text-center border-t border-gray-100">
-                            <h4 class="font-semibold text-gray-800">SPI</h4>
-                        </div>
-                    </div>
-                    <div class="equipment-card">
-                        <img src="https://s41.ax1x.com/2026/03/22/peuIcZT.png" alt="回流焊" class="w-full h-40 object-contain p-4" loading="lazy">
-                        <div class="p-3 text-center border-t border-gray-100">
-                            <h4 class="font-semibold text-gray-800">回流焊</h4>
-                        </div>
-                    </div>
-                    <div class="equipment-card">
-                        <img src="https://s41.ax1x.com/2026/03/22/peuI2oF.png" alt="X-RAY" class="w-full h-40 object-contain p-4" loading="lazy">
-                        <div class="p-3 text-center border-t border-gray-100">
-                            <h4 class="font-semibold text-gray-800">X-RAY</h4>
-                        </div>
-                    </div>
-                    <div class="equipment-card">
-                        <img src="https://s41.ax1x.com/2026/03/22/peuIgdU.png" alt="点胶机" class="w-full h-40 object-contain p-4" loading="lazy">
-                        <div class="p-3 text-center border-t border-gray-100">
-                            <h4 class="font-semibold text-gray-800">点胶机</h4>
-                        </div>
-                    </div>
-                    <div class="equipment-card">
-                        <img src="https://s41.ax1x.com/2026/03/22/peuIyLV.png" alt="AOI" class="w-full h-40 object-contain p-4" loading="lazy">
-                        <div class="p-3 text-center border-t border-gray-100">
-                            <h4 class="font-semibold text-gray-800">AOI</h4>
-                        </div>
-                    </div>
-                    <div class="equipment-card">
-                        <img src="https://s41.ax1x.com/2026/03/23/peux8QU.png" alt="恒温烤箱" class="w-full h-40 object-contain p-4" loading="lazy">
-                        <div class="p-3 text-center border-t border-gray-100">
-                            <h4 class="font-semibold text-gray-800">恒温烤箱</h4>
-                        </div>
-                    </div>
-                    <div class="equipment-card">
-                        <img src="https://s41.ax1x.com/2026/03/23/peux1zT.png" alt="BGA焊台" class="w-full h-40 object-contain p-4" loading="lazy">
-                        <div class="p-3 text-center border-t border-gray-100">
-                            <h4 class="font-semibold text-gray-800">BGA焊台</h4>
-                        </div>
-                    </div>
+                    <div class="equipment-card"><img src="https://s41.ax1x.com/2026/03/23/peuxQJ0.png" alt="自动上板机" class="w-full h-40 object-contain p-4" loading="lazy"><div class="p-3 text-center border-t border-gray-100"><h4 class="font-semibold text-gray-800 text-sm">自动上板机</h4><p class="text-xs text-gray-400">Loader</p></div></div>
+                    <div class="equipment-card"><img src="https://s41.ax1x.com/2026/03/23/peuxlWV.png" alt="印刷机" class="w-full h-40 object-contain p-4" loading="lazy"><div class="p-3 text-center border-t border-gray-100"><h4 class="font-semibold text-gray-800 text-sm">印刷机</h4><p class="text-xs text-gray-400">Printer</p></div></div>
+                    <div class="equipment-card"><img src="https://s41.ax1x.com/2026/03/22/peuIWi4.png" alt="贴片机" class="w-full h-40 object-contain p-4" loading="lazy"><div class="p-3 text-center border-t border-gray-100"><h4 class="font-semibold text-gray-800 text-sm">贴片机</h4><p class="text-xs text-gray-400">Mounter</p></div></div>
+                    <div class="equipment-card"><img src="https://s41.ax1x.com/2026/03/22/peuIss0.png" alt="SPI" class="w-full h-40 object-contain p-4" loading="lazy"><div class="p-3 text-center border-t border-gray-100"><h4 class="font-semibold text-gray-800 text-sm">SPI</h4><p class="text-xs text-gray-400">Solder Paste Inspection</p></div></div>
+                    <div class="equipment-card"><img src="https://s41.ax1x.com/2026/03/22/peuIcZT.png" alt="回流焊" class="w-full h-40 object-contain p-4" loading="lazy"><div class="p-3 text-center border-t border-gray-100"><h4 class="font-semibold text-gray-800 text-sm">回流焊</h4><p class="text-xs text-gray-400">Reflow Oven</p></div></div>
+                    <div class="equipment-card"><img src="https://s41.ax1x.com/2026/03/22/peuI2oF.png" alt="X-RAY" class="w-full h-40 object-contain p-4" loading="lazy"><div class="p-3 text-center border-t border-gray-100"><h4 class="font-semibold text-gray-800 text-sm">X-RAY</h4><p class="text-xs text-gray-400">X-Ray Inspection</p></div></div>
+                    <div class="equipment-card"><img src="https://s41.ax1x.com/2026/03/22/peuIgdU.png" alt="点胶机" class="w-full h-40 object-contain p-4" loading="lazy"><div class="p-3 text-center border-t border-gray-100"><h4 class="font-semibold text-gray-800 text-sm">点胶机</h4><p class="text-xs text-gray-400">Dispenser</p></div></div>
+                    <div class="equipment-card"><img src="https://s41.ax1x.com/2026/03/22/peuIyLV.png" alt="AOI" class="w-full h-40 object-contain p-4" loading="lazy"><div class="p-3 text-center border-t border-gray-100"><h4 class="font-semibold text-gray-800 text-sm">AOI</h4><p class="text-xs text-gray-400">Optical Inspection</p></div></div>
+                    <div class="equipment-card"><img src="https://s41.ax1x.com/2026/03/23/peux8QU.png" alt="恒温烤箱" class="w-full h-40 object-contain p-4" loading="lazy"><div class="p-3 text-center border-t border-gray-100"><h4 class="font-semibold text-gray-800 text-sm">恒温烤箱</h4><p class="text-xs text-gray-400">Oven</p></div></div>
+                    <div class="equipment-card"><img src="https://s41.ax1x.com/2026/03/23/peux1zT.png" alt="BGA焊台" class="w-full h-40 object-contain p-4" loading="lazy"><div class="p-3 text-center border-t border-gray-100"><h4 class="font-semibold text-gray-800 text-sm">BGA焊台</h4><p class="text-xs text-gray-400">BGA Station</p></div></div>
                 </div>
             </div>
-
-            <!-- 工厂实景 -->
-            <div class="mb-16">
+            <div>
                 <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
                     <i class="fas fa-industry text-blue-600 mr-3"></i>
                     工厂实景
+                    <span class="ml-2 text-sm font-normal text-gray-400">Factory Tour</span>
                     <span class="ml-3 text-sm font-normal text-gray-500">共6个车间</span>
                 </h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="factory-card card-hover">
-                        <img src="https://s41.ax1x.com/2026/03/21/penD7gH.png" alt="物料配套作业区" class="w-full h-56 object-cover" loading="lazy">
-                        <div class="p-5 text-center">
-                            <h4 class="text-lg font-semibold text-gray-800">物料配套作业区</h4>
-                        </div>
-                    </div>
-                    <div class="factory-card card-hover">
-                        <img src="https://aka.doubaocdn.com/s/SILY1wmSqK" alt="SMT车间" class="w-full h-56 object-cover" loading="lazy">
-                        <div class="p-5 text-center">
-                            <h4 class="text-lg font-semibold text-gray-800">SMT车间</h4>
-                        </div>
-                    </div>
-                    <div class="factory-card card-hover">
-                        <img src="https://s41.ax1x.com/2026/03/21/penDObt.png" alt="AIO车间" class="w-full h-56 object-cover" loading="lazy">
-                        <div class="p-5 text-center">
-                            <h4 class="text-lg font-semibold text-gray-800">AIO车间</h4>
-                        </div>
-                    </div>
-                    <div class="factory-card card-hover">
-                        <img src="https://s41.ax1x.com/2026/03/21/penDjVP.jpg" alt="三防车间" class="w-full h-56 object-cover" loading="lazy">
-                        <div class="p-5 text-center">
-                            <h4 class="text-lg font-semibold text-gray-800">三防车间</h4>
-                        </div>
-                    </div>
-                    <div class="factory-card card-hover">
-                        <img src="https://s41.ax1x.com/2026/03/21/penDvUf.jpg" alt="装配车间" class="w-full h-56 object-cover" loading="lazy">
-                        <div class="p-5 text-center">
-                            <h4 class="text-lg font-semibold text-gray-800">装配车间</h4>
-                        </div>
-                    </div>
-                    <div class="factory-card card-hover">
-                        <img src="https://s41.ax1x.com/2026/03/21/penDx58.png" alt="功能测试" class="w-full h-56 object-cover" loading="lazy">
-                        <div class="p-5 text-center">
-                            <h4 class="text-lg font-semibold text-gray-800">功能测试</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 自研检测设备 -->
-            <div>
-                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
-                    <i class="fas fa-tools text-blue-600 mr-3"></i>
-                    自研检测设备
-                    <span class="ml-3 text-sm font-normal text-gray-500">共2台专业检测平台</span>
-                </h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div class="bg-gray-50 rounded-2xl p-6 card-hover">
-                        <img src="https://s41.ax1x.com/2026/03/19/pemm8C4.png" alt="国产车防盗匹配平台" class="w-full h-64 object-contain mb-4" loading="lazy">
-                        <h4 class="text-lg font-bold text-gray-800 text-center">国产车防盗匹配平台</h4>
-                        <p class="text-gray-500 text-center text-sm mt-2">专业防盗匹配检测设备</p>
-                    </div>
-                    <div class="bg-gray-50 rounded-2xl p-6 card-hover">
-                        <img src="https://s41.ax1x.com/2026/03/19/pemmG8J.png" alt="ECU综合测试平台" class="w-full h-64 object-contain mb-4" loading="lazy">
-                        <h4 class="text-lg font-bold text-gray-800 text-center">ECU综合测试平台</h4>
-                        <p class="text-gray-500 text-center text-sm mt-2">全方位ECU功能检测</p>
-                    </div>
+                    <div class="factory-card card-hover"><img src="https://s41.ax1x.com/2026/03/21/penD7gH.png" alt="物料配套作业区" class="w-full h-56 object-cover" loading="lazy"><div class="p-5 text-center"><h4 class="text-lg font-semibold text-gray-800">物料配套作业区</h4><p class="text-xs text-gray-400 mt-1">Material Preparation</p></div></div>
+                    <div class="factory-card card-hover"><img src="https://s41.ax1x.com/2026/03/21/penDjVP.jpg" alt="SMT车间" class="w-full h-56 object-cover" loading="lazy"><div class="p-5 text-center"><h4 class="text-lg font-semibold text-gray-800">SMT车间</h4><p class="text-xs text-gray-400 mt-1">SMT Workshop</p></div></div>
+                    <div class="factory-card card-hover"><img src="https://s41.ax1x.com/2026/03/21/penDObt.png" alt="AIO车间" class="w-full h-56 object-cover" loading="lazy"><div class="p-5 text-center"><h4 class="text-lg font-semibold text-gray-800">AIO车间</h4><p class="text-xs text-gray-400 mt-1">AIO Workshop</p></div></div>
+                    <div class="factory-card card-hover"><img src="https://s41.ax1x.com/2026/03/21/penDjVP.jpg" alt="三防车间" class="w-full h-56 object-cover" loading="lazy"><div class="p-5 text-center"><h4 class="text-lg font-semibold text-gray-800">三防车间</h4><p class="text-xs text-gray-400 mt-1">Conformal Coating</p></div></div>
+                    <div class="factory-card card-hover"><img src="https://s41.ax1x.com/2026/03/21/penDvUf.jpg" alt="装配车间" class="w-full h-56 object-cover" loading="lazy"><div class="p-5 text-center"><h4 class="text-lg font-semibold text-gray-800">装配车间</h4><p class="text-xs text-gray-400 mt-1">Assembly</p></div></div>
+                    <div class="factory-card card-hover"><img src="https://s41.ax1x.com/2026/03/21/penDx58.png" alt="功能测试" class="w-full h-56 object-cover" loading="lazy"><div class="p-5 text-center"><h4 class="text-lg font-semibold text-gray-800">功能测试</h4><p class="text-xs text-gray-400 mt-1">Function Testing</p></div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 联系我们 -->
+    <!-- 产品中心 / Products -->
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="section-title text-3xl lg:text-4xl font-bold text-gray-800 mb-4">产品中心</h2>
+                <span class="section-subtitle text-gray-400">PRODUCT CENTER</span>
+                <p class="text-gray-600 mt-8 max-w-2xl mx-auto">六大类产品，覆盖汽油、柴油、新能源等多种车型需求</p>
+                <p class="text-gray-400 text-sm mt-2">Six categories covering gasoline, diesel, and new energy vehicles</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button class="tab-btn active px-6 py-2 rounded-full font-medium transition-all border border-gray-200" data-tab="gasoline">汽油发动机ECU <span class="text-xs opacity-70">Gasoline</span></button>
+                <button class="tab-btn px-6 py-2 rounded-full font-medium transition-all border border-gray-200 bg-white text-gray-600 hover:bg-gray-100" data-tab="hyundai">现代汽车ECU <span class="text-xs opacity-70">Hyundai</span></button>
+                <button class="tab-btn px-6 py-2 rounded-full font-medium transition-all border border-gray-200 bg-white text-gray-600 hover:bg-gray-100" data-tab="diesel">柴油发动机ECU <span class="text-xs opacity-70">Diesel</span></button>
+                <button class="tab-btn px-6 py-2 rounded-full font-medium transition-all border border-gray-200 bg-white text-gray-600 hover:bg-gray-100" data-tab="transmission">变速箱TCU <span class="text-xs opacity-70">Transmission</span></button>
+                <button class="tab-btn px-6 py-2 rounded-full font-medium transition-all border border-gray-200 bg-white text-gray-600 hover:bg-gray-100" data-tab="newenergy">新能源VCU <span class="text-xs opacity-70">New Energy</span></button>
+                <button class="tab-btn px-6 py-2 rounded-full font-medium transition-all border border-gray-200 bg-white text-gray-600 hover:bg-gray-100" data-tab="jetski">摩托艇ECU <span class="text-xs opacity-70">Jetski</span></button>
+            </div>
+
+            <!-- 汽油发动机ECU / Gasoline ECU -->
+            <div id="gasoline" class="tab-content">
+                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-gas-pump text-blue-600 mr-3"></i>
+                    汽油发动机电脑板（ECU）
+                    <span class="ml-2 text-sm font-normal text-gray-400">Gasoline Engine ECU</span>
+                    <span class="ml-3 text-sm font-normal text-gray-500">共48款产品</span>
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/20/pezw9oR.jpg"><img src="https://s41.ax1x.com/2026/05/20/pezw9oR.jpg" alt="M154" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">M154</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/20/penStUI.png"><img src="https://s41.ax1x.com/2026/03/20/penStUI.png" alt="ME7.9.7" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME7.9.7</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/28/pmiDwjA.jpg"><img src="https://s41.ax1x.com/2026/05/28/pmiDwjA.jpg" alt="M7亮壳" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">M7亮壳</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/20/penS3Ke.png"><img src="https://s41.ax1x.com/2026/03/20/penS3Ke.png" alt="M7铸铝" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">M7铸铝</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/20/penS8DH.png"><img src="https://s41.ax1x.com/2026/03/20/penS8DH.png" alt="ME7" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME7</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/20/penSGbd.png"><img src="https://s41.ax1x.com/2026/03/20/penSGbd.png" alt="ME17" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME17</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/17/peZjM6A.png"><img src="https://s41.ax1x.com/2026/03/17/peZjM6A.png" alt="ECU6.1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ECU6.1</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/17/peZjQOI.png"><img src="https://s41.ax1x.com/2026/03/17/peZjQOI.png" alt="MG1UA008" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MG1UA008</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/17/peZj1mt.png"><img src="https://s41.ax1x.com/2026/03/17/peZj1mt.png" alt="MG1US008" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MG1US008</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/08/pmnGEfU.png"><img src="https://s41.ax1x.com/2026/06/08/pmnGEfU.png" alt="MG1US008" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MG1US008</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/17/peZj8Tf.png"><img src="https://s41.ax1x.com/2026/03/17/peZj8Tf.png" alt="MG1US018" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MG1US018</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/26/pmPenO0.png"><img src="https://s41.ax1x.com/2026/05/26/pmPenO0.png" alt="MED17中板" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MED17中板</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/20/penSlvD.jpg"><img src="https://s41.ax1x.com/2026/03/20/penSlvD.jpg" alt="MED17大板" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MED17大板</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/18/peeM4KA.png"><img src="https://s41.ax1x.com/2026/03/18/peeM4KA.png" alt="MED17.4.4" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MED17.4.4</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/20/peniSpt.png"><img src="https://s41.ax1x.com/2026/03/20/peniSpt.png" alt="ME7.4.4" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME7.4.4</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/20/penSYVA.png"><img src="https://s41.ax1x.com/2026/03/20/penSYVA.png" alt="ME7.4.5" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME7.4.5</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/27/pmP5JXT.png"><img src="https://s41.ax1x.com/2026/05/27/pmP5JXT.png" alt="ITMS-6F" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ITMS-6F</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/18/pexGczd.png"><img src="https://s41.ax1x.com/2026/05/18/pexGczd.png" alt="MT20" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT20</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/18/peeM6UK.png"><img src="https://s41.ax1x.com/2026/03/18/peeM6UK.png" alt="MT22U" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT22U</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/26/pmCO4FU.jpg"><img src="https://s41.ax1x.com/2026/05/26/pmCO4FU.jpg" alt="MT22.1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT22.1</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/08/pmnGPwq.jpg"><img src="https://s41.ax1x.com/2026/06/08/pmnGPwq.jpg" alt="MT22.3" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT22.3</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/19/pemm4IS.png"><img src="https://s41.ax1x.com/2026/03/19/pemm4IS.png" alt="MT34" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT34</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/19/pemmRqP.png"><img src="https://s41.ax1x.com/2026/03/19/pemmRqP.png" alt="MT60" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT60</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/01/pmAfi11.png"><img src="https://s41.ax1x.com/2026/06/01/pmAfi11.png" alt="MT62.1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT62.1</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/08/pmnGiT0.jpg"><img src="https://s41.ax1x.com/2026/06/08/pmnGiT0.jpg" alt="MT62.3" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT62.3</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/19/pemmfVf.png"><img src="https://s41.ax1x.com/2026/03/19/pemmfVf.png" alt="MT80" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT80</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/25/pmCN2QK.jpg"><img src="https://s41.ax1x.com/2026/05/25/pmCN2QK.jpg" alt="MT92.1中板" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT92.1中板</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/25/pmCNRsO.jpg"><img src="https://s41.ax1x.com/2026/05/25/pmCNRsO.jpg" alt="MT92.1大板" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT92.1大板</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/19/pemm7xs.jpg"><img src="https://s41.ax1x.com/2026/03/19/pemm7xs.jpg" alt="MT95" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT95</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/27/pmPIKKK.png"><img src="https://s41.ax1x.com/2026/05/27/pmPIKKK.png" alt="ME17.5.22" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME17.5.22</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/18/pexGLyn.jpg"><img src="https://s41.ax1x.com/2026/05/18/pexGLyn.jpg" alt="MED17.5.25" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MED17.5.25</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/01/pmAfF6x.png"><img src="https://s41.ax1x.com/2026/06/01/pmAfF6x.png" alt="FC-34" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">FC-34</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/01/pmAf9h9.png"><img src="https://s41.ax1x.com/2026/06/01/pmAf9h9.png" alt="EMS6104" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EMS6104</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/01/pmAfptJ.jpg"><img src="https://s41.ax1x.com/2026/06/01/pmAfptJ.jpg" alt="311系列" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">311系列</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/01/pmAfSk4.jpg"><img src="https://s41.ax1x.com/2026/06/01/pmAfSk4.jpg" alt="IAW 6KPJ" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">IAW 6KPJ</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/29/pmFeYXn.png"><img src="https://s41.ax1x.com/2026/05/29/pmFeYXn.png" alt="VA1000Q" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">VA1000Q</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/29/pmFe1fg.png"><img src="https://s41.ax1x.com/2026/05/29/pmFe1fg.png" alt="LEC4AF" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">LEC4AF</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/28/pmiDdcd.png"><img src="https://s41.ax1x.com/2026/05/28/pmiDdcd.png" alt="FC-50" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">FC-50</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/27/pmP5NBF.jpg"><img src="https://s41.ax1x.com/2026/05/27/pmP5NBF.jpg" alt="Easy_U1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">Easy_U1</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/26/pmPemyq.jpg"><img src="https://s41.ax1x.com/2026/05/26/pmPemyq.jpg" alt="Easy_U2" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">Easy_U2</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/26/pmCO7l9.jpg"><img src="https://s41.ax1x.com/2026/05/26/pmCO7l9.jpg" alt="EasyU SDI" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EasyU SDI</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/26/pmCOIW4.jpg"><img src="https://s41.ax1x.com/2026/05/26/pmCOIW4.jpg" alt="SIMK31" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">SIMK31</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/18/pexGRsI.jpg"><img src="https://s41.ax1x.com/2026/05/18/pexGRsI.jpg" alt="T446" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">T446</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/18/pexG2QA.jpg"><img src="https://s41.ax1x.com/2026/05/18/pexG2QA.jpg" alt="ECM-DAA" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ECM-DAA</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/18/pexG6RH.jpg"><img src="https://s41.ax1x.com/2026/05/18/pexG6RH.jpg" alt="DZBS" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">DZBS</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/20/pezwPF1.jpg"><img src="https://s41.ax1x.com/2026/05/20/pezwPF1.jpg" alt="SIM2K-51.4" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">SIM2K-51.4</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/08/pmnGkkV.jpg"><img src="https://s41.ax1x.com/2026/06/08/pmnGkkV.jpg" alt="SCE60.12" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">SCE60.12</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/18/pm3ORNq.jpg"><img src="https://s41.ax1x.com/2026/06/18/pm3ORNq.jpg" alt="BPE32" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">BPE32</p></div>
+                </div>
+            </div>
+
+            <!-- 现代汽车ECU / Hyundai ECU -->
+            <div id="hyundai" class="tab-content hidden">
+                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-car text-blue-600 mr-3"></i>
+                    现代汽车电脑板（ECU）
+                    <span class="ml-2 text-sm font-normal text-gray-400">Hyundai ECU</span>
+                    <span class="ml-3 text-sm font-normal text-gray-500">共12款产品</span>
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/03/pmEItn1.jpg"><img src="https://s41.ax1x.com/2026/06/03/pmEItn1.jpg" alt="ME17.9.8" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME17.9.8</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/03/pmEI81J.jpg"><img src="https://s41.ax1x.com/2026/06/03/pmEI81J.jpg" alt="MEG17.9.12" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MEG17.9.12</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/03/pmEI3p4.jpg"><img src="https://s41.ax1x.com/2026/06/03/pmEI3p4.jpg" alt="MED17.9.8" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MED17.9.8</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/03/pmEIlhF.jpg"><img src="https://s41.ax1x.com/2026/06/03/pmEIlhF.jpg" alt="MEG17.9.12.1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MEG17.9.12.1</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/03/pmEIQtU.jpg"><img src="https://s41.ax1x.com/2026/06/03/pmEIQtU.jpg" alt="MEG17.9.13" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MEG17.9.13</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/03/pmEIMkT.jpg"><img src="https://s41.ax1x.com/2026/06/03/pmEIMkT.jpg" alt="MEG17.9.21" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MEG17.9.21</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/26/pmCO5YF.jpg"><img src="https://s41.ax1x.com/2026/05/26/pmCO5YF.jpg" alt="M7.9.8" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">M7.9.8</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/17/peZj30P.png"><img src="https://s41.ax1x.com/2026/03/17/peZj30P.png" alt="MG7.9.8" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MG7.9.8</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/08/peqUUcq.png"><img src="https://s41.ax1x.com/2026/05/08/peqUUcq.png" alt="ME17.9.5" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME17.9.5</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/08/peqU1HS.png"><img src="https://s41.ax1x.com/2026/05/08/peqU1HS.png" alt="ME17.9.11.1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ME17.9.11.1</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/20/pezwiJx.jpg"><img src="https://s41.ax1x.com/2026/05/20/pezwiJx.jpg" alt="GPGDSH2.26.1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">GPGDSH2.26.1</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/18/pexG4df.jpg"><img src="https://s41.ax1x.com/2026/05/18/pexG4df.jpg" alt="MEDG17.9.8" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MEDG17.9.8</p></div>
+                </div>
+            </div>
+
+            <!-- 柴油发动机ECU / Diesel ECU -->
+            <div id="diesel" class="tab-content hidden">
+                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-oil-can text-blue-600 mr-3"></i>
+                    柴油发动机电脑板（ECU）
+                    <span class="ml-2 text-sm font-normal text-gray-400">Diesel Engine ECU</span>
+                    <span class="ml-3 text-sm font-normal text-gray-500">共6款产品</span>
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/08/pmnGpOs.jpg"><img src="https://s41.ax1x.com/2026/06/08/pmnGpOs.jpg" alt="EDC17C04" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EDC17C04</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/29/pmFeJ6s.png"><img src="https://s41.ax1x.com/2026/05/29/pmFeJ6s.png" alt="EDC17C55" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EDC17C55</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/08/peqUQnf.jpg"><img src="https://s41.ax1x.com/2026/05/08/peqUQnf.jpg" alt="EDC17C63" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EDC17C63</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/29/pmFeGlj.png"><img src="https://s41.ax1x.com/2026/05/29/pmFeGlj.png" alt="EDC16C39" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EDC16C39</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/01/pmAfEnK.png"><img src="https://s41.ax1x.com/2026/06/01/pmAfEnK.png" alt="EDC17C53" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EDC17C53</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/18/peeMWgH.png"><img src="https://s41.ax1x.com/2026/03/18/peeMWgH.png" alt="EDC17C81" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EDC17C81</p></div>
+                </div>
+            </div>
+
+            <!-- 变速箱TCU / Transmission TCU -->
+            <div id="transmission" class="tab-content hidden">
+                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-cogs text-blue-600 mr-3"></i>
+                    变速箱汽车电脑板（TCU）
+                    <span class="ml-2 text-sm font-normal text-gray-400">Transmission TCU</span>
+                    <span class="ml-3 text-sm font-normal text-gray-500">共12款产品</span>
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/08/pmnGCmn.jpg"><img src="https://s41.ax1x.com/2026/06/08/pmnGCmn.jpg" alt="MP TCU" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MP TCU</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/01/pmAfkX6.png"><img src="https://s41.ax1x.com/2026/06/01/pmAfkX6.png" alt="波箱" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">波箱</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/29/pmFe8pQ.png"><img src="https://s41.ax1x.com/2026/05/29/pmFe8pQ.png" alt="UTC8.1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">UTC8.1</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/28/pmiDBnI.jpg"><img src="https://s41.ax1x.com/2026/05/28/pmiDBnI.jpg" alt="31036 3RCOA" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">31036 3RCOA</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/19/pm86cad.png"><img src="https://s41.ax1x.com/2026/06/19/pm86cad.png" alt="310F6 6LA0A" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">310F6 6LA0A</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/27/pmP5U74.png"><img src="https://s41.ax1x.com/2026/05/27/pmP5U74.png" alt="7DCTTCU" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">7DCTTCU</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/27/pmP5tnU.png"><img src="https://s41.ax1x.com/2026/05/27/pmP5tnU.png" alt="NL-4DE电脑" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">NL-4DE电脑</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/18/peeMrHx.png"><img src="https://s41.ax1x.com/2026/03/18/peeMrHx.png" alt="ASGW-LD" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">ASGW-LD</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/20/pezwASK.jpg"><img src="https://s41.ax1x.com/2026/05/20/pezwASK.jpg" alt="DQ381电脑" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">DQ381电脑</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/20/pezwSeJ.jpg"><img src="https://s41.ax1x.com/2026/05/20/pezwSeJ.jpg" alt="CVT电脑" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">CVT电脑</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/18/pexGWLt.jpg"><img src="https://s41.ax1x.com/2026/05/18/pexGWLt.jpg" alt="DQ200电脑" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">DQ200电脑</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/19/pm866VH.png"><img src="https://s41.ax1x.com/2026/06/19/pm866VH.png" alt="EAST80.C1" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">EAST80.C1</p></div>
+                </div>
+            </div>
+
+            <!-- 新能源VCU / New Energy VCU -->
+            <div id="newenergy" class="tab-content hidden">
+                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-bolt text-blue-600 mr-3"></i>
+                    新能源汽车电脑板（VCU）
+                    <span class="ml-2 text-sm font-normal text-gray-400">New Energy VCU</span>
+                    <span class="ml-3 text-sm font-normal text-gray-500">共6款产品</span>
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/22/pmJ85tg.png"><img src="https://s41.ax1x.com/2026/06/22/pmJ85tg.png" alt="VCU04-H-AR" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">VCU04-H-AR</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/18/pm3OhCV.jpg"><img src="https://s41.ax1x.com/2026/06/18/pm3OhCV.jpg" alt="VCU-HB02" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">VCU-HB02</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/03/pmEIN0x.png"><img src="https://s41.ax1x.com/2026/06/03/pmEIN0x.png" alt="VCU17-U61" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">VCU17-U61</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/03/pmEIGc9.png"><img src="https://s41.ax1x.com/2026/06/03/pmEIGc9.png" alt="VC1-UP008.0" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">VC1-UP008.0</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/18/pm3OW40.jpg"><img src="https://s41.ax1x.com/2026/06/18/pm3OW40.jpg" alt="VCU17-U62" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">VCU17-U62</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/18/pm3O43T.png"><img src="https://s41.ax1x.com/2026/06/18/pm3O43T.png" alt="VC1.UP008.5" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">VC1.UP008.5</p></div>
+                </div>
+            </div>
+
+            <!-- 摩托艇ECU / Jetski ECU -->
+            <div id="jetski" class="tab-content hidden">
+                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-ship text-blue-600 mr-3"></i>
+                    摩托艇发动机电脑（ECU）
+                    <span class="ml-2 text-sm font-normal text-gray-400">Jetski ECU</span>
+                    <span class="ml-3 text-sm font-normal text-gray-500">共6款产品</span>
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/03/17/peZjtfg.png"><img src="https://s41.ax1x.com/2026/03/17/peZjtfg.png" alt="MSE6.0" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MSE6.0</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/20/pezwFW6.jpg"><img src="https://s41.ax1x.com/2026/05/20/pezwFW6.jpg" alt="MSE8.0" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MSE8.0</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/20/pezwpw9.png"><img src="https://s41.ax1x.com/2026/05/20/pezwpw9.png" alt="MT05" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT05</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/19/pm86sqe.png"><img src="https://s41.ax1x.com/2026/06/19/pm86sqe.png" alt="MT05EB08" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MT05EB08</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/05/18/pexGheP.png"><img src="https://s41.ax1x.com/2026/05/18/pexGheP.png" alt="MSE3.0" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">MSE3.0</p></div>
+                    <div class="product-card"><a href="#" class="product-img-link block" data-image="https://s41.ax1x.com/2026/06/19/pm86DKO.png"><img src="https://s41.ax1x.com/2026/06/19/pm86DKO.png" alt="28S-06" class="w-full h-32 object-contain p-2 rounded-md" loading="lazy"></a><p class="text-center text-gray-700 py-3 font-medium text-sm border-t">28S-06</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 / Contact -->
     <section id="contact" class="py-20 gradient-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="section-title text-3xl lg:text-4xl font-bold text-white mb-4">联系我们</h2>
+                <span class="section-subtitle text-blue-200">CONTACT US</span>
                 <p class="text-blue-200 mt-8 max-w-2xl mx-auto">欢迎咨询合作，我们将竭诚为您服务</p>
+                <p class="text-blue-300/70 text-sm mt-2">Welcome to contact us for business cooperation</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center text-white">
@@ -1254,30 +462,34 @@
                         <i class="fas fa-map-marker-alt text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">公司地址</h3>
-                    <p class="text-blue-200">河南省郑州市</p>
-                    <p class="text-blue-200">中科智谷创新园</p>
+                    <p class="text-blue-300/70 text-xs mb-2 tracking-wide">ADDRESS</p>
+                    <p class="text-blue-200">浙江省杭州市余杭区</p>
+                    <p class="text-blue-200">金恒德汽配用品城A区1栋27-28号</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center text-white">
+                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-weixin text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">添加微信</h3>
+                    <p class="text-blue-300/70 text-xs mb-2 tracking-wide">WECHAT</p>
+                    <p class="text-blue-200 mb-4">扫码联系我们 / Scan to contact</p>
+                    <img src="https://s41.ax1x.com/2026/09/02/pnFf0yQ.jpg" alt="微信二维码 / WeChat QR" class="wechat-qr">
                 </div>
                 <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center text-white">
                     <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-phone text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">联系电话</h3>
-                    <p class="text-blue-200">商务合作</p>
-                    <p class="text-white font-semibold">400-XXX-XXXX</p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center text-white">
-                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-envelope text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">电子邮箱</h3>
-                    <p class="text-blue-200">业务咨询</p>
-                    <p class="text-white font-semibold">info@zhongke-auto.com</p>
+                    <h3 class="text-xl font-bold mb-2">业务电话</h3>
+                    <p class="text-blue-300/70 text-xs mb-2 tracking-wide">PHONE</p>
+                    <p class="text-blue-200">商务合作 / Business</p>
+                    <p class="text-white font-semibold">138-XXXX-XXXX</p>
+                    <p class="text-white font-semibold">139-XXXX-XXXX</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 页脚 -->
+    <!-- 页脚 / Footer -->
     <footer class="bg-gray-900 text-gray-400 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
@@ -1287,16 +499,15 @@
                             <i class="fas fa-car text-white"></i>
                         </div>
                         <div>
-                            <h3 class="text-white font-bold">中科汽车零部件</h3>
-                            <p class="text-xs">ZHONGKE AUTO PARTS</p>
+                            <h3 class="text-white font-bold">杭州锦烁汽车电子</h3>
+                            <p class="text-xs">HANGZHOU JINSHUO AUTO</p>
                         </div>
                     </div>
-                    <p class="text-sm leading-relaxed">
-                        专业汽车电子零部件供应商，专注ECU/TCU/VCU研发制造。
-                    </p>
+                    <p class="text-sm leading-relaxed">专业汽车电子零部件供应商，专注ECU/TCU/VCU研发制造。</p>
+                    <p class="text-xs text-gray-500 mt-2">Professional auto electronic parts supplier specializing in ECU/TCU/VCU R&D and manufacturing.</p>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">产品中心</h4>
+                    <h4 class="text-white font-semibold mb-4">产品中心 <span class="text-xs text-gray-500 font-normal">Products</span></h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#products" class="hover:text-white transition-colors">汽油发动机ECU</a></li>
                         <li><a href="#products" class="hover:text-white transition-colors">柴油发动机ECU</a></li>
@@ -1305,7 +516,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">关于我们</h4>
+                    <h4 class="text-white font-semibold mb-4">关于我们 <span class="text-xs text-gray-500 font-normal">About</span></h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#about" class="hover:text-white transition-colors">公司简介</a></li>
                         <li><a href="#equipment" class="hover:text-white transition-colors">生产设备</a></li>
@@ -1314,124 +525,130 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">联系方式</h4>
+                    <h4 class="text-white font-semibold mb-4">联系方式 <span class="text-xs text-gray-500 font-normal">Contact</span></h4>
                     <ul class="space-y-2 text-sm">
-                        <li class="flex items-center">
-                            <i class="fas fa-map-marker-alt w-5"></i>
-                            <span>郑州市中科智谷创新园</span>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt w-5 mt-0.5 flex-shrink-0"></i>
+                            <span>浙江省杭州市余杭区金恒德汽配用品城A区1栋27-28号</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-phone w-5"></i>
-                            <span>400-XXX-XXXX</span>
+                            <span>138-XXXX-XXXX</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-envelope w-5"></i>
-                            <span>info@zhongke-auto.com</span>
+                            <i class="fas fa-phone w-5"></i>
+                            <span>139-XXXX-XXXX</span>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 text-center text-sm">
-                <p>&copy; 2026 中科汽车零部件有限公司 版权所有</p>
+                <p>© 2026 杭州锦烁汽车电子有限公司 版权所有</p>
+                <p class="text-xs text-gray-600 mt-1">Hangzhou Jinshuo Auto Electronics Co., Ltd. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- 图片放大模态框 -->
+    <!-- 图片放大模态框 / Image Modal -->
     <div id="imageModal" class="modal">
-        <span class="close-modal">&times;</span>
+        <span class="close-modal">×</span>
         <div class="modal-content-wrapper flex flex-col items-center">
-            <img class="modal-content" id="modalImage" alt="放大图片">
+            <img class="modal-content" id="modalImage" alt="放大图片 / Enlarged">
             <div id="modalCaption" class="text-white text-center mt-4 text-lg font-medium"></div>
         </div>
     </div>
 
-    <!-- 返回顶部按钮 -->
+    <!-- 返回顶部 / Back to Top -->
     <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all opacity-0 invisible z-40">
         <i class="fas fa-arrow-up"></i>
     </button>
 
     <script>
-        // 移动端菜单切换
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // 点击移动端菜单项后关闭菜单
+        mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
         mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+            link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); });
         });
 
-        // 导航栏滚动效果
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-md');
-                navbar.classList.remove('shadow-sm');
-            } else {
-                navbar.classList.remove('shadow-md');
-                navbar.classList.add('shadow-sm');
-            }
+            if (window.scrollY > 50) { navbar.classList.add('shadow-md'); navbar.classList.remove('shadow-sm'); }
+            else { navbar.classList.remove('shadow-md'); navbar.classList.add('shadow-sm'); }
         });
 
-        // 产品标签切换
         const tabBtns = document.querySelectorAll('.tab-btn');
         const tabContents = document.querySelectorAll('.tab-content');
-
         tabBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const tabId = btn.dataset.tab;
-                
-                // 更新按钮状态
-                tabBtns.forEach(b => {
-                    b.classList.remove('active');
-                    b.classList.add('bg-white', 'text-gray-600', 'hover:bg-gray-100');
-                });
+                tabBtns.forEach(b => { b.classList.remove('active'); b.classList.add('bg-white', 'text-gray-600', 'hover:bg-gray-100'); });
                 btn.classList.add('active');
                 btn.classList.remove('bg-white', 'text-gray-600', 'hover:bg-gray-100');
-                
-                // 更新内容显示
-                tabContents.forEach(content => {
-                    content.classList.add('hidden');
-                });
+                tabContents.forEach(content => { content.classList.add('hidden'); });
                 document.getElementById(tabId).classList.remove('hidden');
             });
         });
 
-        // 图片放大模态框
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImage');
         const closeModal = document.querySelector('.close-modal');
         const productImgLinks = document.querySelectorAll('.product-img-link');
 
-        productImgLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const imgSrc = link.dataset.image;
+        const originalModalHandler = function(e) {
+            e.preventDefault();
+            const imgSrc = this.dataset.image;
+            let productName = '';
+            const card = this.closest('.product-card, .equipment-card, .factory-card');
+            if (card) {
+                const nameEl = card.querySelector('p, h4');
+                if (nameEl) { productName = nameEl.textContent.trim(); }
+            }
+            const caption = document.getElementById('modalCaption');
+            if (caption) { caption.textContent = productName; }
+            modalImg.style.display = 'none';
+            let loadingDiv = modal.querySelector('.modal-loading');
+            if (!loadingDiv) {
+                loadingDiv = document.createElement('div');
+                loadingDiv.className = 'modal-loading';
+                modal.querySelector('.modal-content-wrapper').insertBefore(loadingDiv, modalImg);
+            }
+            loadingDiv.style.display = 'flex';
+            const tempImg = new Image();
+            tempImg.onload = function() {
                 modalImg.src = imgSrc;
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
+                modalImg.style.display = 'block';
+                modalImg.style.opacity = '0';
+                loadingDiv.style.display = 'none';
+                requestAnimationFrame(() => {
+                    modalImg.style.transition = 'opacity 0.3s ease';
+                    modalImg.style.opacity = '1';
+                });
+            };
+            tempImg.onerror = function() {
+                loadingDiv.style.display = 'none';
+                modalImg.src = '';
+                modalImg.alt = '图片加载失败 / Load Failed';
+                if (caption) { caption.textContent = '图片加载失败 / Load Failed'; }
+            };
+            tempImg.src = imgSrc;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        productImgLinks.forEach(link => {
+            link.removeEventListener('click', link._handler);
+            link._handler = originalModalHandler;
+            link.addEventListener('click', originalModalHandler);
         });
 
         closeModal.addEventListener('click', () => {
             modal.classList.remove('active');
             document.body.style.overflow = '';
         });
-
         modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
+            if (e.target === modal) { modal.classList.remove('active'); document.body.style.overflow = ''; }
         });
-
-        // ESC键关闭模态框
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal.classList.contains('active')) {
                 modal.classList.remove('active');
@@ -1439,9 +656,7 @@
             }
         });
 
-        // 返回顶部按钮
         const backToTop = document.getElementById('backToTop');
-
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
                 backToTop.classList.remove('opacity-0', 'invisible');
@@ -1451,199 +666,18 @@
                 backToTop.classList.remove('opacity-100', 'visible');
             }
         });
+        backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // 滚动动画
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // 观察所有卡片元素 - 确保初始状态可见，只添加入场动画
-        document.querySelectorAll('.product-card, .equipment-card, .factory-card').forEach((card, index) => {
-            // 初始状态就是可见的，动画只是增强效果
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-            card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-            observer.observe(card);
-        });
-
-        // 图片加载优化 - 极简版，确保图片稳定显示
-        function initImageOptimization() {
-            // 给所有懒加载图片添加骨架屏背景
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            
-            images.forEach(img => {
-                if (img.dataset.initialized) return;
-                img.dataset.initialized = 'true';
-                
-                const parent = img.parentElement;
-                
-                // 确保父容器有定位
-                if (getComputedStyle(parent).position === 'static') {
-                    parent.style.position = 'relative';
-                }
-                
-                // 添加骨架屏类到父容器
-                parent.classList.add('has-skeleton');
-                
-                // 图片加载完成后移除骨架屏
-                const onLoad = () => {
-                    parent.classList.remove('has-skeleton');
-                };
-                
-                if (img.complete && img.naturalWidth > 0) {
-                    onLoad();
-                } else {
-                    img.addEventListener('load', onLoad);
-                    img.addEventListener('error', onLoad); // 加载失败也移除骨架屏
-                }
-            });
-        }
-
-        // 初始化
-        initImageOptimization();
-
-        // 标签切换时重新初始化
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                setTimeout(initImageOptimization, 50);
-            });
-        });
-
-        // 初始化图片优化
-        optimizeImages();
-
-        // 优化产品卡片图片容器 - 仅添加类名，不修改DOM结构
         function optimizeProductCards() {
-            // 产品卡片 - 给链接添加容器类
-            document.querySelectorAll('.product-card .product-img-link').forEach(link => {
-                link.classList.add('product-img-container');
-            });
-            
-            // 设备卡片 - 给卡片添加类，通过CSS控制样式
-            document.querySelectorAll('.equipment-card').forEach(card => {
-                card.classList.add('equipment-card-optimized');
-            });
+            document.querySelectorAll('.product-card .product-img-link').forEach(link => { link.classList.add('product-img-container'); });
+            document.querySelectorAll('.equipment-card').forEach(card => { card.classList.add('equipment-card-optimized'); });
         }
-
-        // 执行卡片优化
         optimizeProductCards();
 
-        // 优化工厂实景图片 - 用CSS实现，不修改DOM
-        function optimizeFactoryImages() {
-            document.querySelectorAll('.factory-card').forEach(card => {
-                card.style.overflow = 'hidden';
-            });
-        }
-
-        // 优化关于我们部分的图片 - 用CSS实现，不修改DOM
-        function optimizeAboutImages() {
-            // 直接通过CSS实现hover效果，不操作DOM
-        }
-
-        // 执行所有图片优化
-        optimizeFactoryImages();
-        optimizeAboutImages();
-
-        // 标签切换时重新优化
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                setTimeout(() => {
-                    optimizeImages();
-                    optimizeProductCards();
-                }, 50);
-            });
-        });
-
-        // 模态框图片加载优化
-        const originalModalHandler = function(e) {
-            e.preventDefault();
-            const imgSrc = this.dataset.image;
-            
-            // 获取产品名称
-            let productName = '';
-            const card = this.closest('.product-card, .equipment-card, .factory-card');
-            if (card) {
-                const nameEl = card.querySelector('p, h4');
-                if (nameEl) {
-                    productName = nameEl.textContent.trim();
-                }
-            }
-            
-            // 更新标题
-            const caption = document.getElementById('modalCaption');
-            if (caption) {
-                caption.textContent = productName;
-            }
-            
-            // 显示加载状态
-            modalImg.style.display = 'none';
-            
-            // 检查是否已有加载动画
-            let loadingDiv = modal.querySelector('.modal-loading');
-            if (!loadingDiv) {
-                loadingDiv = document.createElement('div');
-                loadingDiv.className = 'modal-loading';
-                modal.querySelector('.modal-content-wrapper').insertBefore(loadingDiv, modalImg);
-            }
-            loadingDiv.style.display = 'flex';
-            
-            // 创建新图片预加载
-            const tempImg = new Image();
-            tempImg.onload = function() {
-                modalImg.src = imgSrc;
-                modalImg.style.display = 'block';
-                modalImg.style.opacity = '0';
-                loadingDiv.style.display = 'none';
-                
-                // 淡入效果
-                requestAnimationFrame(() => {
-                    modalImg.style.transition = 'opacity 0.3s ease';
-                    modalImg.style.opacity = '1';
-                });
-            };
-            tempImg.onerror = function() {
-                loadingDiv.style.display = 'none';
-                modalImg.src = '';
-                modalImg.alt = '图片加载失败';
-                if (caption) {
-                    caption.textContent = '图片加载失败';
-                }
-            };
-            tempImg.src = imgSrc;
-            
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        };
-
-        // 重新绑定模态框事件
-        productImgLinks.forEach(link => {
-            link.removeEventListener('click', link._handler);
-            link._handler = originalModalHandler;
-            link.addEventListener('click', originalModalHandler);
-        });
-
-        // 给设备卡片和工厂卡片添加点击放大功能
         function addZoomToCards() {
-            // 设备卡片
-            document.querySelectorAll('.equipment-card').forEach(card => {
+            document.querySelectorAll('.equipment-card, .factory-card').forEach(card => {
                 if (card.dataset.zoomEnabled) return;
                 card.dataset.zoomEnabled = 'true';
-                
                 const img = card.querySelector('img');
                 if (img) {
                     card.style.cursor = 'pointer';
@@ -1651,54 +685,15 @@
                         e.preventDefault();
                         const handler = originalModalHandler.bind({
                             dataset: { image: img.src },
-                            closest: function(selector) { return card; }
-                        });
-                        handler(e);
-                    });
-                }
-            });
-            
-            // 工厂卡片
-            document.querySelectorAll('.factory-card').forEach(card => {
-                if (card.dataset.zoomEnabled) return;
-                card.dataset.zoomEnabled = 'true';
-                
-                const img = card.querySelector('img');
-                if (img) {
-                    card.style.cursor = 'pointer';
-                    card.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        const handler = originalModalHandler.bind({
-                            dataset: { image: img.src },
-                            closest: function(selector) { return card; }
-                        });
-                        handler(e);
-                    });
-                }
-            });
-            
-            // 自研检测设备
-            document.querySelectorAll('#equipment .bg-gray-50').forEach(card => {
-                if (card.dataset.zoomEnabled) return;
-                card.dataset.zoomEnabled = 'true';
-                
-                const img = card.querySelector('img');
-                if (img) {
-                    card.style.cursor = 'pointer';
-                    card.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        const handler = originalModalHandler.bind({
-                            dataset: { image: img.src },
-                            closest: function(selector) { return card; }
+                            closest: function() { return card; }
                         });
                         handler(e);
                     });
                 }
             });
         }
-
-        // 执行放大功能绑定
         setTimeout(addZoomToCards, 100);
     </script>
 </body>
 </html>
+
